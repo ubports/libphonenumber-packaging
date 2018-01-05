@@ -1,0 +1,94 @@
+Source: libphonenumber
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Java Maintainers <pkg-java-maintainers@lists.alioth.debian.org>
+Uploaders: Daniel Pocock <daniel@pocock.pro>, Fredrik Roubert <roubert@google.com>
+Build-Depends: cdbs,
+               cmake,
+               debhelper (>= 9),
+               default-jdk | java-sdk,
+               libboost-dev (>= 1.40),
+               libboost-system-dev (>= 1.40),
+               libboost-thread-dev (>= 1.40),
+               libboost-filesystem-dev,
+               libgtest-dev,
+               libicu-dev (>= 4.4),
+               libprotobuf-dev (>= 2.4),
+               libre2-dev,
+               maven-debian-helper (>= 1.5),
+               protobuf-compiler,
+               default-jdk-doc,
+               junit4,
+               libbuild-helper-maven-plugin-java,
+               libmaven-antrun-plugin-java,
+               libmaven-assembly-plugin-java,
+               libmaven-compiler-plugin-java,
+               libmaven-exec-plugin-java,
+               libmaven-jar-plugin-java,
+               libmaven-javadoc-plugin-java,
+               libmaven-war-plugin-java,
+               libprotobuf-java,
+               libservlet3.1-java,
+               libservlet3.1-java-doc
+Standards-Version: 3.9.8
+Section: libs
+Homepage: https://github.com/googlei18n/libphonenumber/
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/libphonenumber.git/
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/libphonenumber.git
+
+Package: libphonenumber7-java
+Section: java
+Architecture: all
+Conflicts: libphonenumber6-java, libphonenumber-java
+Replaces: libphonenumber6-java, libphonenumber-java
+Depends: ${misc:Depends}, ${maven:Depends}
+Recommends: ${maven:OptionalDepends}
+Description: parsing/formatting/validating phone numbers - java
+ Google's common C++ and Java library for parsing, formatting, storing and
+ validating international phone numbers.
+ .
+ This package contains the runtime library JARs for Java users.
+
+Package: libphonenumber-dev
+Section: libdevel
+Architecture: any
+Conflicts: libphonenumber6-dev
+Replaces: libphonenumber6-dev
+Depends: libphonenumber7 (= ${binary:Version}),
+         libgeocoding7 (= ${binary:Version}),
+         ${misc:Depends},
+         libboost-dev (>= 1.40),
+         libboost-system-dev (>= 1.40),
+         libboost-thread-dev (>= 1.40),
+         libprotobuf-dev (>= 2.4)
+Description: parsing/formatting/validating phone numbers - development files
+ Google's common C++ and Java library for parsing, formatting, storing and
+ validating international phone numbers.
+ .
+ This package contains the static libraries and include files.
+
+Package: libphonenumber7
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Multi-Arch: same
+Description: parsing/formatting/validating phone numbers
+ Google's common C++ and Java library for parsing, formatting, storing and
+ validating international phone numbers.
+ .
+ This package contains the runtime libraries for C++ users.
+
+Package: libgeocoding7
+Section: libs
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Breaks: libphonenumber7 (<< 7.0.11-2)
+Replaces: libphonenumber7 (<< 7.0.11-2)
+Multi-Arch: same
+Description: geocoding phone numbers
+ Google's library for geocoding phone international phone numbers.
+ .
+ This package contains the runtime libraries which can be used to geocode phone
+ numbers. This means obtaining a desciption (for example of the location) of a
+ given phone number.

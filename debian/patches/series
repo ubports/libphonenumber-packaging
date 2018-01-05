@@ -1,0 +1,10 @@
+0001-Boost-build-fix.patch
+0002-C-symbols-map.patch
+0003-maven-exclude-demo.patch
+0006-main-lib-jdk5.patch
+0008-tools-jdk5.patch
+0009-maven-tests-forkmode.patch
+0010-reproducible-build.patch
+gcc-6-ftbfs.patch
+readdir_r-is-deprecated.patch
+hash_as_diallable_char.patch
