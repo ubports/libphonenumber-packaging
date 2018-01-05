@@ -1,3 +1,9 @@
+libphonenumber (7.1.1+ubports) xenial; urgency=medium
+
+  * Import to ubports. 
+
+ -- Dan Chapman <dan@ubports.com>  Fri, 05 Jan 2018 19:29:23 +0000
+
 libphonenumber (7.1.0-5ubuntu5) bionic; urgency=medium
 
   * No-change rebuild for icu soname change.
